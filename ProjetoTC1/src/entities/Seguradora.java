@@ -6,10 +6,23 @@ import java.util.ArrayList;
 public class Seguradora {
 
     private Long CNPJ;
-    private String razãoSocial;
+    private String razaoSocial;
     private Date dataInicio;
     private ArrayList<String> emailsContato = new ArrayList<String>();
     private ArrayList<Long> telefonesContato = new ArrayList<Long>();
+
+    public Seguradora() {
+    }
+
+    public Seguradora(
+            Long cNPJ, String razaoSocial, Date dataInicio, ArrayList<String> emailsContato,
+            ArrayList<Long> telefonesContato) {
+        CNPJ = cNPJ;
+        this.razaoSocial = razaoSocial;
+        this.dataInicio = dataInicio;
+        this.emailsContato = emailsContato;
+        this.telefonesContato = telefonesContato;
+    }
 
     public long getCNPJ() {
         return CNPJ;
@@ -19,12 +32,12 @@ public class Seguradora {
         CNPJ = cNPJ;
     }
 
-    public String getRazãoSocial() {
-        return razãoSocial;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setRazãoSocial(String razãoSocial) {
-        this.razãoSocial = razãoSocial;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
     }
 
     public Date getDataInicio() {
@@ -39,7 +52,7 @@ public class Seguradora {
         return emailsContato;
     }
 
-    public void setEmailContato(String novoEmailContato) {
+    public void addEmailSeguradora(String novoEmailContato) {
         emailsContato.add(novoEmailContato);
     }
 
@@ -47,8 +60,17 @@ public class Seguradora {
         return telefonesContato;
     }
 
-    public void setTelefonesContato(Long novoTelefoneContato) {
+    public void addTelefoneSeguradora(Long novoTelefoneContato) {
         telefonesContato.add(novoTelefoneContato);
+    }
+    
+    @Override
+    public String toString() {
+        return "CNPJ: " + CNPJ + System.lineSeparator() 
+        + "Razão Social: " + razaoSocial + System.lineSeparator() 
+        + "Data de Início: " + dataInicio + System.lineSeparator() 
+        + "E-mails: " + emailsContato + System.lineSeparator() 
+        + "Telefones de Contato" + telefonesContato;
     }
 
 }
