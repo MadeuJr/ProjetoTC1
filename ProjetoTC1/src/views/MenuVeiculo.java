@@ -2,10 +2,14 @@ package views;
 
 import java.util.Scanner;
 
+import controller.veiculos.ControllerVeiculos;
+
 public class MenuVeiculo {
 
     Scanner sc = new Scanner(System.in);
     String resposta;
+
+    ControllerVeiculos controller = new ControllerVeiculos();
   
     public MenuVeiculo() {
     }
@@ -29,7 +33,7 @@ public class MenuVeiculo {
             switch (resposta) {
 
                 case "1":
-
+                    
                     break;
                 case "2":
 

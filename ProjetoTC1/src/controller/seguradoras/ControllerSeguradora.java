@@ -1,9 +1,11 @@
 package controller.seguradoras;
 
 import java.text.ParseException;
+
 import java.util.Scanner;
 
 import entities.Seguradora;
+import repository.ArraySaver;
 
 public class ControllerSeguradora {
 
@@ -16,9 +18,7 @@ public class ControllerSeguradora {
 
     Scanner sc = new Scanner(System.in);
 
-
-    
-    public void Cadastrar() throws ParseException {
+    public void cadastrar() throws ParseException {
         Seguradora newSeguradora = new Seguradora();
 
         System.out.println("Insira o CNPJ da Seguradora:");
@@ -76,7 +76,27 @@ public class ControllerSeguradora {
         newSeguradora.setDataInicio(tempDataInicio);
         newSeguradora.setRazaoSocial(tempRazaoSocial);
 
+        ArraySaver.arraySeguradora.add(newSeguradora);
 
+
+    }
+    public void atualizar() {
+        
+    }
+
+    public void deletar() {
+        
+    }
+    
+    public void buscar() {
+        
+    }
+
+    public void buscarTodos() {
+        for (Seguradora seguradora : ArraySaver.arraySeguradora) {
+            System.out.println(seguradora);   
+        }
+        
     }
 
 }

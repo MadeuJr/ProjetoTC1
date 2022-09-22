@@ -1,19 +1,24 @@
 package views;
 
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import entities.Seguradora;
+import entities.Veiculo;
 
 public class MenuPrincipal {
 
     Scanner sc = new Scanner(System.in);
     String resposta;
 
-    
-   
+    public ArrayList<Seguradora> listaSeguradora = new ArrayList<Seguradora>();
+    public ArrayList<Veiculo> listaVeiculos = new ArrayList<Veiculo>();
 
     public MenuPrincipal() {
     }
 
-    public void selecionaOpt() {
+    public void selecionaOpt() throws ParseException {
 
         while (resposta != "3") {
             Utills.clearConsole();

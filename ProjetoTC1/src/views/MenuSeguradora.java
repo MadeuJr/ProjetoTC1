@@ -1,17 +1,23 @@
 package views;
 
+import java.text.ParseException;
 import java.util.Scanner;
+
+import controller.seguradoras.ControllerSeguradora;
+
 
 public class MenuSeguradora {
 
     Scanner sc = new Scanner(System.in);
-    String resposta;
+    String resposta; 
 
+
+    ControllerSeguradora controller = new ControllerSeguradora();
 
     public MenuSeguradora() {
     }
 
-    public void selecionaOpt() {
+    public void selecionaOpt() throws ParseException {
 
         while (resposta != "6") {
             Utills.clearConsole();
@@ -30,14 +36,17 @@ public class MenuSeguradora {
             switch (resposta) {
 
                 case "1":
-
+                    controller.cadastrar();
                     break;
                 case "2":
 
                     break;
 
                 case "3":
+                    controller.buscarTodos();
 
+                    System.out.println("\nPressione Enter para continuar");
+                    sc.nextLine();
                     break;
                 case "4":
 
