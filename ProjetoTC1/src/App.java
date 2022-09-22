@@ -1,17 +1,34 @@
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.sql.Date;
 
 import entities.Seguradora;
 import entities.Veiculo;
+import views.MenuPrincipal;
+import views.Utills;
 
 public class App {
 
     ArrayList<Seguradora> listaSeguradora = new ArrayList<Seguradora>();
     ArrayList<Veiculo> listaVeiculos = new ArrayList<Veiculo>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+        MenuPrincipal.exibeMenu();
+        Seguradora s1 = new Seguradora();
 
+    
+        s1.setCNPJ(1);
+        s1.setDataInicio("10/10/2010");
+        s1.setRazaoSocial("Bananinha");
+        s1.addEmailSeguradora("hermenegil127@uorak.com");
+        s1.addTelefoneSeguradora(123456L);
+        Utills.clearConsole();
+        System.out.println(s1);
+
+        
     }
 
     public void addListaSeguradora(Seguradora novaSeguradora) {

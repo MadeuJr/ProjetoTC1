@@ -1,16 +1,22 @@
 package entities;
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+
 public class Seguradora {
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
 
     private Long CNPJ;
     private String razaoSocial;
     private Date dataInicio;
     private ArrayList<String> emailsContato = new ArrayList<String>();
     private ArrayList<Long> telefonesContato = new ArrayList<Long>();
-
+    private ArrayList<Veiculo> veiculosAssegurados = new ArrayList<Veiculo>();
+    
     public Seguradora() {
     }
 
@@ -44,8 +50,9 @@ public class Seguradora {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setDataInicio(String dataInicio) throws ParseException {
+        
+        this.dataInicio = simpleDateFormat.parse(dataInicio);
     }
 
     public ArrayList<String> getEmailContato() {
@@ -66,11 +73,12 @@ public class Seguradora {
     
     @Override
     public String toString() {
+        
         return "CNPJ: " + CNPJ + System.lineSeparator() 
         + "Razão Social: " + razaoSocial + System.lineSeparator() 
-        + "Data de Início: " + dataInicio + System.lineSeparator() 
+        + "Data de Início: " +  simpleDateFormat.format(dataInicio) + System.lineSeparator() 
         + "E-mails: " + emailsContato + System.lineSeparator() 
-        + "Telefones de Contato" + telefonesContato;
+        + "Telefones de Contato: " + telefonesContato;
     }
 
 }
