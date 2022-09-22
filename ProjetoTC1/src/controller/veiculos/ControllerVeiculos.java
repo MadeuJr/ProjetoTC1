@@ -1,5 +1,5 @@
 package controller.veiculos;
 
-public class CadastraVeic {
+public class ControllerVeiculos {
     
 }

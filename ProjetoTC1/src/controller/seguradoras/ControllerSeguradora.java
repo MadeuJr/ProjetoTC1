@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import entities.Seguradora;
 
-public class CadastraSeg {
+public class ControllerSeguradora {
 
     private Long tempCNPJ;
     private String tempRazaoSocial;
@@ -16,6 +16,8 @@ public class CadastraSeg {
 
     Scanner sc = new Scanner(System.in);
 
+
+    
     public void Cadastrar() throws ParseException {
         Seguradora newSeguradora = new Seguradora();
 
@@ -73,7 +75,7 @@ public class CadastraSeg {
         newSeguradora.setCNPJ(tempCNPJ);
         newSeguradora.setDataInicio(tempDataInicio);
         newSeguradora.setRazaoSocial(tempRazaoSocial);
-        
+
 
     }
 
