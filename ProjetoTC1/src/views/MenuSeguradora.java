@@ -19,49 +19,46 @@ public class MenuSeguradora {
 
     public void selecionaOpt() throws ParseException {
 
-        while (resposta != "6") {
+        while (resposta == null ||!resposta.equals("6")) {
             Utills.clearConsole();
 
-            System.out.println("Menu Seguradoras" +
-                    "\n\n1- Cadastrar Seguradora" +
-                    "\n\n2- Exibir Seguradora" +
-                    "\n\n3- Exibir todas Seguradoras" +
-                    "\n\n4- Atualizar Seguradora" +
-                    "\n\n5- Deletar Seguradora" +
-                    "\n\n6- Voltar");
+            System.out.println("""
+                    Menu Seguradoras
+
+                    1- Cadastrar Seguradora
+
+                    2- Exibir Seguradora
+
+                    3- Exibir todas Seguradoras
+
+                    4- Atualizar Seguradora
+
+                    5- Deletar Seguradora
+
+                    6- Voltar""");
                     
             System.out.print("\nSelecione uma opção: ");
             resposta = sc.nextLine();
 
             switch (resposta) {
-
-                case "1":
-                    controller.cadastrar();
-                    break;
-                case "2":
-
-                    break;
-
-                case "3":
-                    controller.buscarTodos();
-
+                case "1" -> controller.cadastrar();
+                case "2" -> {
+                    controller.buscar();
                     System.out.println("\nPressione Enter para continuar");
                     sc.nextLine();
-                    break;
-                case "4":
-
-                    break;
-                case "5":
-
-                    break;
-                case "6":
-                    resposta = "6";
-
-                    break;
-                default:
+                }
+                case "3" -> {
+                    controller.buscarTodos();
+                    System.out.println("\nPressione Enter para continuar");
+                    sc.nextLine();
+                }
+                case "4" -> controller.atualizar();
+                case "5" -> controller.deletar();
+                case "6" -> resposta = "6";
+                default -> {
                     System.out.println("\nValor inválido. Insira um valor válido. Pressione Enter para continuar");
                     sc.nextLine();
-                    break;
+                }
             }
         }
     }

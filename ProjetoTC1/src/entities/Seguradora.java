@@ -1,20 +1,22 @@
 package entities;
 
+import repository.ModelWithPK;
+
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
-public class Seguradora {
+public class Seguradora extends ModelWithPK<Long> {
 
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     private Long CNPJ;
     private String razaoSocial;
     private Date dataInicio;
-    private ArrayList<String> emailsContato = new ArrayList<String>();
-    private ArrayList<Long> telefonesContato = new ArrayList<Long>();
+    private ArrayList<String> emailsContato = new ArrayList<>();
+    private ArrayList<Long> telefonesContato = new ArrayList<>();
  
     public Seguradora() {
     }
@@ -80,4 +82,8 @@ public class Seguradora {
         + "Telefones de Contato: " + telefonesContato;
     }
 
+    @Override
+    public Long getPK() {
+        return getCNPJ();
+    }
 }
