@@ -5,46 +5,55 @@ import java.util.Scanner;
 public class MenuVeiculo {
 
     Scanner sc = new Scanner(System.in);
-
-    public final static void exibeMenu() {
-        System.out.println("Menu Principal" +
-                "\n\n1- Cadastrar Veiculo" +
-                "\n\n2- Exibir Veiculo" +
-                "\n\n3- Exibir todos Veiculos" +
-                "\n\n4- Atualizar Veiculo" +
-                "\n\n5- Deletar Veículo" +
-                "\n\n6- Voltar");
+    String resposta;
+  
+    public MenuVeiculo() {
     }
 
-    public final void selecionaOpt() {
-        Utills.clearConsole();
-        exibeMenu();
-        switch (sc.nextLine()) {
+    public void selecionaOpt() {
 
-            case "1":
+        while (resposta != "6") {
+            Utills.clearConsole();
 
-                break;
-            case "2":
+            System.out.println("Menu Veiculos" +
+                    "\n\n1- Cadastrar Veiculo" +
+                    "\n\n2- Exibir Veiculo" +
+                    "\n\n3- Exibir todos Veiculos" +
+                    "\n\n4- Atualizar Veiculo" +
+                    "\n\n5- Deletar Veículo" +
+                    "\n\n6- Voltar");
 
-                break;
+            System.out.print("\nSelecione uma opção: ");
+            resposta = sc.nextLine();
 
-            case "3":
+            switch (resposta) {
 
-                break;
-            case "4":
+                case "1":
 
-                break;
-            case "5":
+                    break;
+                case "2":
 
-                break;
-            case "6":
+                    break;
 
-                break;
+                case "3":
 
-            default:
-                System.out.println("Valor inválido. Insira um valor válido");
-                break;
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+                case "6":
+                    resposta = "6";
+
+                    break;
+                default:
+                    System.out.println("\nValor inválido. Insira um valor válido. Pressione Enter para continuar");
+                    sc.nextLine();
+                    break;
+            }
+
         }
-
     }
 }

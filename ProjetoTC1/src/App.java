@@ -1,34 +1,26 @@
 
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.sql.Date;
+import java.util.Scanner;
 
 import entities.Seguradora;
 import entities.Veiculo;
 import views.MenuPrincipal;
-import views.Utills;
 
 public class App {
 
     ArrayList<Seguradora> listaSeguradora = new ArrayList<Seguradora>();
     ArrayList<Veiculo> listaVeiculos = new ArrayList<Veiculo>();
-
-    public static void main(String[] args) throws ParseException {
-        MenuPrincipal.exibeMenu();
-        Seguradora s1 = new Seguradora();
+    Scanner sc = new Scanner(System.in);
 
     
-        s1.setCNPJ(1);
-        s1.setDataInicio("10/10/2010");
-        s1.setRazaoSocial("Bananinha");
-        s1.addEmailSeguradora("hermenegil127@uorak.com");
-        s1.addTelefoneSeguradora(123456L);
-        Utills.clearConsole();
-        System.out.println(s1);
 
-        
+    public static void main(String[] args) throws ParseException {
+        MenuPrincipal mnPrincipal = new MenuPrincipal();    
+        mnPrincipal.selecionaOpt();
+
     }
 
     public void addListaSeguradora(Seguradora novaSeguradora) {
@@ -39,11 +31,18 @@ public class App {
             for (Seguradora seg : listaSeguradora) {
                 if (seg.getCNPJ() == novaSeguradora.getCNPJ()) {
                     objectFound = true;
+                    System.out.println("CNPJ de seguradora já cadastrada");
+                    System.out.println("Pressione Enter para continuar");
+                    sc.nextLine();
+                    break;
                 }
             }
 
             if (objectFound = false) {
                 listaSeguradora.add(novaSeguradora);
+                System.out.println("Seguradora cadastrada");
+                System.out.println("Pressione Enter para continuar");
+                sc.nextLine();
             }
 
         }
@@ -60,11 +59,18 @@ public class App {
                         veic.getPlacaCidade() == novoVeiculo.getPlacaCidade() &&
                         veic.getPlacaEstado() == novoVeiculo.getPlacaEstado()) {
                     objectFound = true;
+                    System.out.println("Veiculo Semelhante já cadastrado");
+                    System.out.println("Pressione Enter para continuar");
+                    sc.nextLine();
                     break;
+
                 }
             }
             if (objectFound = false) {
                 listaVeiculos.add(novoVeiculo);
+                System.out.println("Veiculo Cadastrado");
+                System.out.println("Pressione Enter para continuar");
+                sc.nextLine();
             }
         }
     }

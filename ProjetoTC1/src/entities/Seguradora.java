@@ -15,8 +15,7 @@ public class Seguradora {
     private Date dataInicio;
     private ArrayList<String> emailsContato = new ArrayList<String>();
     private ArrayList<Long> telefonesContato = new ArrayList<Long>();
-    private ArrayList<Veiculo> veiculosAssegurados = new ArrayList<Veiculo>();
-    
+ 
     public Seguradora() {
     }
 

@@ -3,35 +3,48 @@ package views;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    Scanner sc = new Scanner(System.in);
 
-    public final static void exibeMenu() {
-        System.out.println("Menu Principal" +
-                "\n\n1- Menu Seguradoras" +
-                "\n\n2- Menu Veículos" +
-                "\n\n3- Sair");
+    Scanner sc = new Scanner(System.in);
+    String resposta;
+
     
-            
+   
+
+    public MenuPrincipal() {
     }
 
-    public final void selecionaOpt() {
-        Utills.clearConsole();
-        exibeMenu();
-        switch (sc.nextLine()) {
-                
-            case "1":
+    public void selecionaOpt() {
 
-                break;
-            case "2":
+        while (resposta != "3") {
+            Utills.clearConsole();
 
-                break;
+            System.out.println("Menu Principal" +
+                    "\n\n1- Menu Seguradoras" +
+                    "\n\n2- Menu Veículos" +
+                    "\n\n3- Sair");
 
-            case "3":
-                System.exit(0);
-                break;
-            default:
-                break;
+            System.out.print("\nSelecione uma opção: ");
+            resposta = sc.nextLine();
+            switch (resposta) {
+
+                case "1":
+                    MenuSeguradora mnSeguradora = new MenuSeguradora();
+                    mnSeguradora.selecionaOpt();
+                    break;
+                case "2":
+                    MenuVeiculo mnVeiculo = new MenuVeiculo();
+                    mnVeiculo.selecionaOpt();
+                    break;
+                case "3":
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("\nValor inválido. Insira um valor válido. Pressione Enter para continuar");
+                    sc.nextLine();
+                    break;
+            }
         }
+
     }
 
 }
