@@ -15,13 +15,14 @@ public class Veiculo extends ModelWithPK<Placa> {
     private ArrayList<String> combustiveisVeiculo = new ArrayList<>();
     private String corVeiculo;
     private ArrayList<String> acessoriosVeiculo = new ArrayList<>();
+    private Seguradora seguradora;
 
     public Veiculo() {
     }
 
     public Veiculo(Placa placa, String tipoVeiculo, String marcaVeiculo, String modeloVeiculo, Integer anoVeiculo, Integer portasVeiculo,
                    Integer numLugaresVeiculos, ArrayList<String> combustiveisVeiculo, String corVeiculo,
-                   ArrayList<String> acessoriosVeiculo) {
+                   ArrayList<String> acessoriosVeiculo, Seguradora seguradora) {
         this.placa = placa;
         this.tipoVeiculo = tipoVeiculo;
         this.marcaVeiculo = marcaVeiculo;
@@ -32,6 +33,7 @@ public class Veiculo extends ModelWithPK<Placa> {
         this.combustiveisVeiculo = combustiveisVeiculo;
         this.corVeiculo = corVeiculo;
         this.acessoriosVeiculo = acessoriosVeiculo;
+        this.seguradora = seguradora;
     }
 
     public Placa getPlaca() {
@@ -122,6 +124,15 @@ public class Veiculo extends ModelWithPK<Placa> {
         this.acessoriosVeiculo = acessoriosVeiculo;
     }
 
+    public Seguradora getSeguradora() {
+        return seguradora;
+    }
+
+    public void setSeguradora(Seguradora seguradora) {
+        this.seguradora = seguradora;
+    }
+
+
     @Override
     public String toString() {
         return "Veiculo{" +
@@ -135,6 +146,7 @@ public class Veiculo extends ModelWithPK<Placa> {
                 ", combustiveisVeiculo=" + combustiveisVeiculo +
                 ", corVeiculo='" + corVeiculo + '\'' +
                 ", acessoriosVeiculo=" + acessoriosVeiculo +
+                ", seguradora=" + seguradora +
                 '}';
     }
 

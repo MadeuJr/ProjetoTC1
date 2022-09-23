@@ -44,4 +44,8 @@ public abstract class GenericRepository<T extends ModelWithPK<K>, K> {
     public ArrayList<T> findAll(){
         return data;
    }
+
+    public ArrayList<T> getData() {
+        return data;
+    }
 }

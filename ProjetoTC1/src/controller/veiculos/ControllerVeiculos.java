@@ -1,7 +1,9 @@
 package controller.veiculos;
 
 import entities.Placa;
+import entities.Seguradora;
 import entities.Veiculo;
+import repository.seguradora.SeguradoraRepository;
 import repository.veiculo.VeiculoRepository;
 
 import java.util.ArrayList;
@@ -10,12 +12,15 @@ import java.util.Scanner;
 public class ControllerVeiculos {
 
     private final VeiculoRepository repository;
-
-    public ControllerVeiculos(VeiculoRepository repository) {
-        this.repository = repository;
-    }
+    private final SeguradoraRepository seguradoraRepository;
 
     Scanner sc = new Scanner(System.in);
+
+
+    public ControllerVeiculos(VeiculoRepository repository, SeguradoraRepository seguradoraRepository) {
+        this.repository = repository;
+        this.seguradoraRepository = seguradoraRepository;
+    }
 
     public void inserir(){
         System.out.println("Informe as letras da placa: ");
@@ -33,6 +38,7 @@ public class ControllerVeiculos {
 
         Placa p = new Placa(letrasPlaca, numerosPlaca, cidadePlaca, estadoPlaca);
         Veiculo veiculo = formularioInserirEditar();
+        if(veiculo == null) return;
         veiculo.setPlaca(p);
 
         repository.insert(veiculo);
@@ -47,14 +53,22 @@ public class ControllerVeiculos {
             return;
         }
         Veiculo v2 = formularioInserirEditar();
+        if(v2 == null) return;
         v2.setPlaca(veiculo.getPlaca());
         repository.edit(v2);
         System.out.println("\n--- Veículo atualizado ---\n");
     }
 
     private Veiculo formularioInserirEditar(){
-
         Veiculo veiculo = new Veiculo();
+        Seguradora seguradora = buscarSeguradora();
+        if(seguradora == null){
+            System.out.println("Seguradora não cadastrada");
+            return null;
+        }
+        veiculo.setSeguradora(seguradora);
+
+
         System.out.println("Informe o tipo do veiculo: ");
         String tipo = sc.nextLine();
         veiculo.setTipoVeiculo(tipo);
@@ -160,6 +174,7 @@ public class ControllerVeiculos {
 
         return repository.findOne(new Placa(letrasPlaca, numerosPlaca, cidadePlaca, estadoPlaca));
     }
+
     public void buscarTodos(){
         ArrayList<Veiculo> all = repository.findAll();
         if(all.isEmpty()){
@@ -169,5 +184,19 @@ public class ControllerVeiculos {
         for (Veiculo veiculo : all) {
             System.out.println(veiculo+"\n");
         }
+    }
+
+    private Seguradora buscarSeguradora(){
+
+        System.out.println("Insira o CNPJ da seguradora:");
+        long tempCNPJ = sc.nextLong();
+        sc.nextLine();
+        //todo retornar validação no final do projeto
+//        while (Long.toString(tempCNPJ).length() != 14) {
+//            System.out.println("Insira um valor com 14 caracteres");
+//            tempCNPJ = sc.nextLong();
+//        }
+
+        return seguradoraRepository.findOne(tempCNPJ);
     }
 }

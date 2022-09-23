@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 
 import controller.veiculos.ControllerVeiculos;
+import repository.seguradora.SeguradoraRepository;
 import repository.veiculo.VeiculoRepository;
 
 public class MenuVeiculo {
@@ -11,8 +12,8 @@ public class MenuVeiculo {
     String resposta;
     private final ControllerVeiculos controller;
   
-    public MenuVeiculo(VeiculoRepository repositoryVeiculo) {
-        controller = new ControllerVeiculos(repositoryVeiculo);
+    public MenuVeiculo(VeiculoRepository repositoryVeiculo, SeguradoraRepository seguradoraRepository) {
+        controller = new ControllerVeiculos(repositoryVeiculo,seguradoraRepository);
     }
 
     public void selecionaOpt() {
