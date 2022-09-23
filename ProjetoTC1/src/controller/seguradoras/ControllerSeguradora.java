@@ -10,7 +10,11 @@ import repository.seguradora.SeguradoraRepository;
 
 public class ControllerSeguradora {
 
-    private final SeguradoraRepository repository = new SeguradoraRepository();
+    private final SeguradoraRepository repository;
+
+    public ControllerSeguradora(SeguradoraRepository repository) {
+        this.repository = repository;
+    }
 
     Scanner sc = new Scanner(System.in);
 

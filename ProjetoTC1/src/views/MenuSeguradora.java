@@ -4,17 +4,18 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 import controller.seguradoras.ControllerSeguradora;
+import repository.seguradora.SeguradoraRepository;
 
 
 public class MenuSeguradora {
 
     Scanner sc = new Scanner(System.in);
-    String resposta; 
+    String resposta;
 
+    private final ControllerSeguradora controller;
 
-    ControllerSeguradora controller = new ControllerSeguradora();
-
-    public MenuSeguradora() {
+    public MenuSeguradora(SeguradoraRepository repositorySeguradora) {
+        controller= new ControllerSeguradora(repositorySeguradora);
     }
 
     public void selecionaOpt() throws ParseException {

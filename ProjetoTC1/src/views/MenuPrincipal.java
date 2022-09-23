@@ -6,14 +6,16 @@ import java.util.Scanner;
 
 import entities.Seguradora;
 import entities.Veiculo;
+import repository.seguradora.SeguradoraRepository;
+import repository.veiculo.VeiculoRepository;
 
 public class MenuPrincipal {
 
     Scanner sc = new Scanner(System.in);
     String resposta;
 
-    public ArrayList<Seguradora> listaSeguradora = new ArrayList<Seguradora>();
-    public ArrayList<Veiculo> listaVeiculos = new ArrayList<Veiculo>();
+    private final SeguradoraRepository repositorySeguradora = new SeguradoraRepository();
+    private final VeiculoRepository repositoryVeiculo = new VeiculoRepository();
 
     public MenuPrincipal() {
     }
@@ -33,11 +35,11 @@ public class MenuPrincipal {
             switch (resposta) {
 
                 case "1":
-                    MenuSeguradora mnSeguradora = new MenuSeguradora();
+                    MenuSeguradora mnSeguradora = new MenuSeguradora(repositorySeguradora);
                     mnSeguradora.selecionaOpt();
                     break;
                 case "2":
-                    MenuVeiculo mnVeiculo = new MenuVeiculo();
+                    MenuVeiculo mnVeiculo = new MenuVeiculo(repositoryVeiculo);
                     mnVeiculo.selecionaOpt();
                     break;
                 case "3":

@@ -9,7 +9,12 @@ import java.util.Scanner;
 
 public class ControllerVeiculos {
 
-    private final VeiculoRepository repository = new VeiculoRepository();
+    private final VeiculoRepository repository;
+
+    public ControllerVeiculos(VeiculoRepository repository) {
+        this.repository = repository;
+    }
+
     Scanner sc = new Scanner(System.in);
 
     public void inserir(){

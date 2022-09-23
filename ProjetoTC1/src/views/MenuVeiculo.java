@@ -3,15 +3,16 @@ package views;
 import java.util.Scanner;
 
 import controller.veiculos.ControllerVeiculos;
+import repository.veiculo.VeiculoRepository;
 
 public class MenuVeiculo {
 
     Scanner sc = new Scanner(System.in);
     String resposta;
-
-    ControllerVeiculos controller = new ControllerVeiculos();
+    private final ControllerVeiculos controller;
   
-    public MenuVeiculo() {
+    public MenuVeiculo(VeiculoRepository repositoryVeiculo) {
+        controller = new ControllerVeiculos(repositoryVeiculo);
     }
 
     public void selecionaOpt() {
