@@ -70,11 +70,6 @@ public class Placa {
 
     @Override
     public String toString() {
-        return "Placa{" +
-                "letras='" + letras + '\'' +
-                ", numeros='" + numeros + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                '}';
+        return "Placa: " + letras + numeros + " "+ cidade + " " + estado;
     }
 }

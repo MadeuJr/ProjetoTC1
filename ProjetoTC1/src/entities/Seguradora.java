@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Seguradora extends ModelWithPK<Long> {
 
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
 
     private Long CNPJ;
     private String razaoSocial;
