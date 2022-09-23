@@ -23,11 +23,10 @@ public class ControllerSeguradora {
 
         System.out.println("Insira o CNPJ da Seguradora:");
         long tempCNPJ = sc.nextLong();
-        //todo retornar validação no final do projeto
-//        while (Long.toString(tempCNPJ).length() != 14) {
-//            System.out.println("Insira um valor com 14 caracteres");
-//            tempCNPJ = sc.nextLong();
-//        }
+        while (Long.toString(tempCNPJ).length() != 14) {
+            System.out.println("Insira um valor com 14 caracteres");
+            tempCNPJ = sc.nextLong();
+        }
         
         System.out.println("Insira a Razão Social");
         sc.nextLine();
@@ -87,11 +86,10 @@ public class ControllerSeguradora {
 
         System.out.println("Insira o CNPJ da Seguradora que deseja alterar:");
         long tempCNPJ = sc.nextLong();
-        //todo retornar validação no final do projeto
-//        while (Long.toString(tempCNPJ).length() != 14) {
-//            System.out.println("Insira um valor com 14 caracteres");
-//            tempCNPJ = sc.nextLong();
-//        }
+        while (Long.toString(tempCNPJ).length() != 14) {
+            System.out.println("Insira um valor com 14 caracteres");
+            tempCNPJ = sc.nextLong();
+        }
 
         Seguradora one = repository.findOne(tempCNPJ);
         if(one == null){
@@ -156,11 +154,10 @@ public class ControllerSeguradora {
 
         System.out.println("Insira o CNPJ da Seguradora que deseja alterar:");
         long tempCNPJ = sc.nextLong();
-        //todo retornar validação no final do projeto
-//        while (Long.toString(tempCNPJ).length() != 14) {
-//            System.out.println("Insira um valor com 14 caracteres");
-//            tempCNPJ = sc.nextLong();
-//        }
+        while (Long.toString(tempCNPJ).length() != 14) {
+            System.out.println("Insira um valor com 14 caracteres");
+            tempCNPJ = sc.nextLong();
+        }
 
         Seguradora one = repository.findOne(tempCNPJ);
         if(one == null){

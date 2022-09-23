@@ -191,11 +191,10 @@ public class ControllerVeiculos {
         System.out.println("Insira o CNPJ da seguradora:");
         long tempCNPJ = sc.nextLong();
         sc.nextLine();
-        //todo retornar validação no final do projeto
-//        while (Long.toString(tempCNPJ).length() != 14) {
-//            System.out.println("Insira um valor com 14 caracteres");
-//            tempCNPJ = sc.nextLong();
-//        }
+        while (Long.toString(tempCNPJ).length() != 14) {
+            System.out.println("Insira um valor com 14 caracteres");
+            tempCNPJ = sc.nextLong();
+        }
 
         return seguradoraRepository.findOne(tempCNPJ);
     }
