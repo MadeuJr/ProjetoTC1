@@ -171,10 +171,10 @@ public class ControllerSeguradora {
     public void buscar() {
         System.out.println("Insira o CNPJ da Seguradora que deseja buscar:");
         long tempCNPJ = sc.nextLong();
-//        while (Long.toString(tempCNPJ).length() != 14) {
-//            System.out.println("Insira um valor com 14 caracteres");
-//            tempCNPJ = sc.nextLong();
-//        }
+        while (Long.toString(tempCNPJ).length() != 14) {
+            System.out.println("Insira um valor com 14 caracteres");
+            tempCNPJ = sc.nextLong();
+        }
 
         Seguradora one = repository.findOne(tempCNPJ);
         if(one == null){
