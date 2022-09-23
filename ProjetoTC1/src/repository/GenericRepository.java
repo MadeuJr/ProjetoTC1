@@ -14,7 +14,7 @@ public abstract class GenericRepository<T extends ModelWithPK<K>, K> {
        int indexToEdit = -1;
        for (int i = 0; i < data.size(); i++) {
            T m = data.get(i);
-           if(m.getPK() != model.getPK()) continue;
+           if(!m.getPK().equals(model.getPK())) continue;
            indexToEdit = i;
            break;
        }
@@ -26,21 +26,20 @@ public abstract class GenericRepository<T extends ModelWithPK<K>, K> {
         int indexToRemove = -1;
         for (int i = 0; i < data.size(); i++) {
             T model = data.get(i);
-            if(model.getPK() != key) continue;
+            if(!model.getPK().equals(key)) continue;
             indexToRemove = i;
             break;
         }
         if(indexToRemove == -1) return;
         data.remove(indexToRemove);
     }
-
     public  T findOne(K key){
        for (T model : data) {
-           if(model.getPK() != key) continue;
-           return model;
+           if(model.getPK().equals(key))  return model;
        }
        return null;
    }
+
 
     public ArrayList<T> findAll(){
         return data;
