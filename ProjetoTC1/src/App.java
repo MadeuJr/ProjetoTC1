@@ -1,8 +1,5 @@
 
 import java.text.ParseException;
-import java.util.Scanner;
-
-import entities.Seguradora;
 import views.MenuPrincipal;
 
 

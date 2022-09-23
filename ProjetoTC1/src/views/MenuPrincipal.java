@@ -1,11 +1,7 @@
 package views;
 
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import entities.Seguradora;
-import entities.Veiculo;
 import repository.seguradora.SeguradoraRepository;
 import repository.veiculo.VeiculoRepository;
 
