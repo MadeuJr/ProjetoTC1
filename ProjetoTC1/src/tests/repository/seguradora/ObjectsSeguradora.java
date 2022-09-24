@@ -1,4 +1,4 @@
-package tests.utils;
+package tests.repository.seguradora;
 
 import java.io.IOException;
 import java.text.ParseException;
