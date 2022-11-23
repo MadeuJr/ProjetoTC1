@@ -39,7 +39,7 @@ label {
 
 .l-box-lrg {
     padding: 2em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .is-center {
@@ -70,18 +70,19 @@ label {
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different
  */
-.pure-button {
+.button {
     background-color: #1f8dd6;
     color: white;
     padding: 0.5em 2em;
+    border: 0.5px solid #17212b1a ;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-a.pure-button-primary {
-    background: white;
-    color: #1f8dd6;
-    border-radius: 5px;
-    font-size: 120%;
+.button:hover{
+    background-color: #0069d9;
+    color: white;
+    transition: all 0.5s;
 }
 
 
@@ -93,11 +94,13 @@ a.pure-button-primary {
 .home-menu {
     padding: 0.5em;
     text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
 }
+
 .home-menu {
     background: #2d3e50;
 }
+
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
     border-bottom: none;
@@ -118,6 +121,7 @@ a.pure-button-primary {
 .home-menu a {
     color: #6FBEF3;
 }
+
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
@@ -149,7 +153,10 @@ a.pure-button-primary {
     height: 50%;
     margin: auto;
     position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
     text-align: center;
     text-transform: uppercase;
 }
@@ -190,7 +197,7 @@ a.pure-button-primary {
 
 .content-wrapper-controled {
     position: absolute;
-    top: 7%;
+    top: 12%;
     width: 100%;
     min-height: 12%;
     z-index: 2;
@@ -220,9 +227,10 @@ a.pure-button-primary {
 .content-subhead {
     color: #1f8dd6;
 }
-    .content-subhead i {
-        margin-right: 7px;
-    }
+
+.content-subhead i {
+    margin-right: 7px;
+}
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
@@ -255,12 +263,13 @@ a.pure-button-primary {
     .home-menu {
         text-align: left;
     }
-        .home-menu ul {
-            float: right;
-        }
+
+    .home-menu ul {
+        float: right;
+    }
 
     /* We increase the height of the splash-container */
-/*    .splash-container {
+    /*    .splash-container {
         height: 500px;
     }*/
 
@@ -283,12 +292,89 @@ a.pure-button-primary {
 
 }
 
+/* User Styles */
+
+.border {
+    border: 1.5px solid #7f8c8d;
+    border-radius: 20px;
+}
+
+.allignitem {
+    text-align: center;
+}
+
+.pure-g>div {
+    box-sizing: border-box;
+}
+
+.l-box-form {
+    margin: 0 2em;
+}
+
+.setwidth {
+    max-width: 1024px;
+}
+
+.justifycontent{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul.boxs-container {
+    list-style: none;
+    padding: 20px;
+}
+
+ul.boxs-container li {
+    display: inline;
+}
+
+ul.boxs-container li label {
+    display: inline-block;
+    background-color: #2B3241;
+    border: 1px solid #B1B2CF;
+    color: #B1B2CF;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.boxs-container li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.boxs-container li label:hover {
+    border: 1px solid #425b76;
+}
+
+ul.boxs-container li input[type="checkbox"]:checked+label {
+    border: 1px solid #425b76;
+    background-color: #425b76;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.boxs-container li input[type="checkbox"] {
+    display:contents;
+}
+
+
+
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
+
     /* We increase the header font size even more */
     .splash-head {
         font-size: 300%;
