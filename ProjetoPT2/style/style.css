@@ -74,12 +74,12 @@ label {
     background-color: #1f8dd6;
     color: white;
     padding: 0.5em 2em;
-    border: 0.5px solid #17212b1a ;
+    border: 0.5px solid #17212b1a;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     background-color: #0069d9;
     color: white;
     transition: all 0.5s;
@@ -197,7 +197,7 @@ label {
 
 .content-wrapper-controled {
     position: absolute;
-    top: 12%;
+    top: 10%;
     width: 100%;
     min-height: 12%;
     z-index: 2;
@@ -297,6 +297,7 @@ label {
 .border {
     border: 1.5px solid #7f8c8d;
     border-radius: 20px;
+    margin-bottom: 50px;
 }
 
 .allignitem {
@@ -315,9 +316,20 @@ label {
     max-width: 1024px;
 }
 
-.justifycontent{
-    display: flex;
-    justify-content: space-evenly;
+
+
+.button-error{
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-error {
+    background: rgb(202, 60, 60);
+}
+
+.button-error:hover{
+    background: rgb(216, 21, 21); 
 }
 
 ul.boxs-container {
@@ -363,7 +375,7 @@ ul.boxs-container li input[type="checkbox"]:checked+label {
 }
 
 ul.boxs-container li input[type="checkbox"] {
-    display:contents;
+    display: contents;
 }
 
 
