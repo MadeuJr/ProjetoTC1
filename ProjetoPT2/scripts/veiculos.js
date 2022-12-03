@@ -95,7 +95,7 @@ function setFormDeleteVeiculo() {
         '<div class="marginForm is-center">' +
         '<br>' +
         '<label for="idVeículo">ID do veículo</label>' +
-        '<select class="pure-input-rounded" name="combustivel" required>' +
+        '<select class="pure-input-rounded" name="idVeículo" required>' +
         '<option selected disabled></option>' +
         '<option value="1">1</option>' +
         '<option value="2">2</option>' +
