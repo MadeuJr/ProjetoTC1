@@ -8,21 +8,21 @@ function setFormAddSeguradora() {
 
         '<div class="pure-u-2-5 l-box-form">' +
         '<label for="segCNPJ">CNPJ</label>' +
-        '<input class="pure-input-rounded" name="placaL" type="text" placeholder="CNPJ" required />' +
+        '<input class="pure-input-rounded" name="segCNPJ" type="text" placeholder="CNPJ" inputmode="numeric" maxlength="14" minlength="14" pattern="\\d*" required />' +
         '</div>' +
         '<div class="pure-u-2-5 l-box-form">' +
         '<label for="segRazaoSoc">Razão Social</label>' +
-        '<input class="pure-input-rounded" name="placaN" placeholder="Razão Social" type="text" required  />' +
+        '<input class="pure-input-rounded" name="segRazaoSoc" placeholder="Razão Social" type="text" required  />' +
         '</div>' +
 
         '<div class="pure-u-3-24 l-box-form">' +
         '<label for="segInitDate">Data de inicio</label>' +
-        '<input class="pure-input-rounded" name="placaEstado" type="date" required />' +
+        '<input class="pure-input-rounded" name="segInitDate" type="date" required />' +
         ' </div>' +
 
         ' <div class="pure-u-2-5 l-box-form">' +
         '<label for="segEmail">E-mail</label>' +
-        '<input class="pure-input-rounded" name="segEmail" id="segEmail" type="text" placeholder="example@example.com" required />' +
+        '<input class="pure-input-rounded" onblur="ValidateEmail()" name="segEmail" id="segEmail" type="text" placeholder="example@example.com" required />' +
         '<span class="result" id="result"></span>' +
         '</div>' +
 
@@ -51,7 +51,7 @@ function setFormDeleteSeguradora() {
         '<div class="marginForm is-center">' +
         "<br>" +
         '<label for="idSeg">ID da Seguradora</label>' +
-        '<select class="pure-input-rounded" name="combustivel" required>' +
+        '<select class="pure-input-rounded" name="idSeg" required>' +
         "<option selected disabled></option>" +
         '<option value="1">1</option>' +
         '<option value="2">2</option>' +
@@ -80,8 +80,8 @@ function setFormUpdateSeguradora() {
         ' <hr>' +
         ' <div class="marginForm is-center">' +
         ' <br>' +
-        ' <label for="idVeículo">ID da Seguradora</label>' +
-        ' <select class="pure-input-rounded" name="combustivel" required>' +
+        ' <label for="idSeg">ID da Seguradora</label>' +
+        ' <select class="pure-input-rounded" name="idSeg" required>' +
         ' <option selected disabled></option>' +
         ' <option value="1">1</option>' +
         ' <option value="2">2</option>' +
@@ -95,21 +95,21 @@ function setFormUpdateSeguradora() {
 
         '<div class="pure-u-2-5 l-box-form">' +
         '<label for="segCNPJ">CNPJ</label>' +
-        '<input class="pure-input-rounded" name="placaL" type="text" placeholder="CNPJ" required />' +
+        '<input class="pure-input-rounded" name="segCNPJ" type="text" placeholder="CNPJ" inputmode="numeric" maxlength="14" minlength="14" pattern="\\d*" required />' +
         '</div>' +
         ' <div class="pure-u-2-5 l-box-form">' +
         ' <label for="segRazaoSoc">Razão Social</label>' +
-        '<input class="pure-input-rounded" name="placaN" placeholder="Razão Social" type="text"required />' +
+        '<input class="pure-input-rounded" name="segRazaoSoc" placeholder="Razão Social" type="text"required />' +
         '</div>' +
 
         ' <div class="pure-u-3-24 l-box-form">' +
         '<label for="segInitDate">Data de inicio</label>' +
-        '<input class="pure-input-rounded" name="placaEstado" type="date" required />' +
+        '<input class="pure-input-rounded" name="segInitDate" type="date" required />' +
         '</div>' +
 
         '<div class="pure-u-2-5 l-box-form">' +
         ' <label for="segEmail">E-mail</label>' +
-        '<input class="pure-input-rounded" name="segEmail" id="segEmail" type="text"placeholder="example@example.com" required />' +
+        '<input class="pure-input-rounded" onblur="ValidateEmail()" name="segEmail" id="segEmail" type="text"placeholder="example@example.com" required />' +
         '<span class="result" id="result"></span>' +
         '</div>' +
 
@@ -133,7 +133,7 @@ function ValidateEmail() {
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var input = document.getElementById("segEmail")
     if (input.value.match(mailformat)) {
-        document.getElementById("result").innerHTML = ""
+        document.getElementById("result").innerHTML = "E-mail válido"
 
         return true;
     }

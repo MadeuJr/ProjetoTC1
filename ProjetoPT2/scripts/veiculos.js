@@ -13,7 +13,7 @@ function setFormAddVeiculo() {
 
         '<div class="pure-u-2-24 l-box-form">' +
         '<label for= "placaN" > Numeros</label >' +
-        '<input class="pure-input-rounded" name="placaN" type="text" inputmode="numeric" placeholder="1234" maxlength="4" minlength="4" pattern="\d*" required />' +
+        '<input class="pure-input-rounded" name="placaN" type="text" inputmode="numeric" placeholder="1234" maxlength="4" minlength="4" pattern="\\d*" required />' +
         ' </div >' +
 
         ' <div class="pure-u-3-24 l-box-form">' +
@@ -45,7 +45,7 @@ function setFormAddVeiculo() {
         '</div>' +
         '<div>' +
         ' <label for="vAno">Ano do veículo</label>' +
-        '<input class="pure-input-rounded" name="vAno" type="text" inputmode="numeric" placeholder="1980-2023" maxlength="4" minlength="4" pattern="\d*" required />' +
+        '<input class="pure-input-rounded" name="vAno" type="text" inputmode="numeric" placeholder="1980-2023" maxlength="4" minlength="4" pattern="\\d*" required />' +
         '</div>' +
         '<div class="pure-u-3-6 l-box-form">' +
         '<br>' +
@@ -64,14 +64,14 @@ function setFormAddVeiculo() {
         '<ul class="boxs-container is-center">' +
         '<label for="acessorios">Acessorios</label>' +
         '<br>' +
-        '<li><input type="checkbox" id="checkbox-1" value="molasEsportivas"><label for="checkbox-1">Molas esportivas</label></li>' +
-        '<li><input type="checkbox" id="checkbox-2" value="farolLed"><label for="checkbox-2">Farol Led</label></li>' +
-        '<li><input type="checkbox" id="checkbox-3" value="palhetas"><label for="checkbox-3">Palhetas</label></li>' +
-        '<li><input type="checkbox" id="checkbox-4" value="GPS"><label for="checkbox-4">GPS</label></li>' +
-        '<li><input type="checkbox" id="checkbox-5" value="centralMultimidia"><label for="checkbox-5">Central Multimídia</label></li>' +
-        '<li><input type="checkbox" id="checkbox-6" value="Alarme"><label for="checkbox-6">Alarme</label></li>' +
-        '<li><input type="checkbox" id="checkbox-7" value="airbag"><label for="checkbox-7">Airbag</label></li>' +
-        '<li><input type="checkbox" id="checkbox-8" value="suporteCelular"><label for="checkbox-8">Suporte para Celular</label></li>' +
+        '<li><input type="checkbox" id="checkbox-1" value="molasEsportivas"><label name="checkbox-1" for="checkbox-1">Molas esportivas</label></li>' +
+        '<li><input type="checkbox" id="checkbox-2" value="farolLed"><label name="checkbox-2" for="checkbox-2">Farol Led</label></li>' +
+        '<li><input type="checkbox" id="checkbox-3" value="palhetas"><label name="checkbox-3" for="checkbox-3">Palhetas</label></li>' +
+        '<li><input type="checkbox" id="checkbox-4" value="GPS"><label name="checkbox-4" for="checkbox-4">GPS</label></li>' +
+        '<li><input type="checkbox" id="checkbox-5" value="centralMultimidia"><label name="checkbox-5" for="checkbox-5">Central Multimídia</label></li>' +
+        '<li><input type="checkbox" id="checkbox-6" value="Alarme"><label name="checkbox-6" for="checkbox-6">Alarme</label></li>' +
+        '<li><input type="checkbox" id="checkbox-7" value="airbag"><label name="checkbox-7" for="checkbox-7">Airbag</label></li>' +
+        '<li><input type="checkbox" id="checkbox-8" value="suporteCelular"><label name="checkbox-8" for="checkbox-8">Suporte para Celular</label></li>' +
         '</ul>' +
         ' </div>' +
         ' <div class="is-center">' +
@@ -150,7 +150,7 @@ function setFormUpdateVeiculo() {
 
         '<div class="pure-u-2-24 l-box-form">' +
         '<label for= "placaN" > Numeros</label >' +
-        '<input class="pure-input-rounded" name="placaN" type="text" inputmode="numeric" placeholder="1234" maxlength="4" minlength="4" pattern="\d*" required />' +
+        '<input class="pure-input-rounded" name="placaN" type="text" inputmode="numeric" placeholder="1234" maxlength="4" minlength="4" pattern="\\d*" required />' +
         ' </div >' +
 
         ' <div class="pure-u-3-24 l-box-form">' +
@@ -182,7 +182,7 @@ function setFormUpdateVeiculo() {
         '</div>' +
         '<div>' +
         ' <label for="vAno">Ano do veículo</label>' +
-        '<input class="pure-input-rounded" name="vAno" type="text" inputmode="numeric" placeholder="1980-2023" maxlength="4" minlength="4" pattern="\d*" required />' +
+        '<input class="pure-input-rounded" name="vAno" type="text" inputmode="numeric" placeholder="1980-2023" maxlength="4" minlength="4" pattern="\\d*" required />' +
         '</div>' +
         '<div class="pure-u-3-6 l-box-form">' +
         '<br>' +
@@ -201,14 +201,14 @@ function setFormUpdateVeiculo() {
         '<ul class="boxs-container is-center">' +
         '<label for="acessorios">Acessorios</label>' +
         '<br>' +
-        '<li><input type="checkbox" id="checkbox-1" value="molasEsportivas"><label for="checkbox-1">Molas esportivas</label></li>' +
-        '<li><input type="checkbox" id="checkbox-2" value="farolLed"><label for="checkbox-2">Farol Led</label></li>' +
-        '<li><input type="checkbox" id="checkbox-3" value="palhetas"><label for="checkbox-3">Palhetas</label></li>' +
-        '<li><input type="checkbox" id="checkbox-4" value="GPS"><label for="checkbox-4">GPS</label></li>' +
-        '<li><input type="checkbox" id="checkbox-5" value="centralMultimidia"><label for="checkbox-5">Central Multimídia</label></li>' +
-        '<li><input type="checkbox" id="checkbox-6" value="Alarme"><label for="checkbox-6">Alarme</label></li>' +
-        '<li><input type="checkbox" id="checkbox-7" value="airbag"><label for="checkbox-7">Airbag</label></li>' +
-        '<li><input type="checkbox" id="checkbox-8" value="suporteCelular"><label for="checkbox-8">Suporte para Celular</label></li>' +
+        '<li><input type="checkbox" id="checkbox-1" value="molasEsportivas"><label name="checkbox-1" for="checkbox-1">Molas esportivas</label></li>' +
+        '<li><input type="checkbox" id="checkbox-2" value="farolLed"><label name="checkbox-2" for="checkbox-2">Farol Led</label></li>' +
+        '<li><input type="checkbox" id="checkbox-3" value="palhetas"><label name="checkbox-3" for="checkbox-3">Palhetas</label></li>' +
+        '<li><input type="checkbox" id="checkbox-4" value="GPS"><label name="checkbox-4" for="checkbox-4">GPS</label></li>' +
+        '<li><input type="checkbox" id="checkbox-5" value="centralMultimidia"><label name="checkbox-5" for="checkbox-5">Central Multimídia</label></li>' +
+        '<li><input type="checkbox" id="checkbox-6" value="Alarme"><label name="checkbox-6" for="checkbox-6">Alarme</label></li>' +
+        '<li><input type="checkbox" id="checkbox-7" value="airbag"><label name="checkbox-7" for="checkbox-7">Airbag</label></li>' +
+        '<li><input type="checkbox" id="checkbox-8" value="suporteCelular"><label name="checkbox-8" for="checkbox-8">Suporte para Celular</label></li>' +
         '</ul>' +
         ' </div>' +
         ' <div class="is-center">' +
