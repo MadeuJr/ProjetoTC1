@@ -332,6 +332,10 @@ label {
     background: rgb(216, 21, 21); 
 }
 
+.result{
+    color: rgb(202, 60, 60) ;
+}
+
 ul.boxs-container {
     list-style: none;
     padding: 20px;
